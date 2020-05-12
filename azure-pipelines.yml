@@ -61,13 +61,13 @@ stages:
             artifact: manifests
 
           - task: KubernetesManifest@0
-              displayName: Create imagePullSecret
-              inputs:
-                action: createSecret
-                secretName: $(imagePullSecret)
-                dockerRegistryEndpoint: 'Container Registry Connection'
-                kubernetesServiceConnection: 'Kubernetes Cluster Connection'
-                namespace: 'default'
+            displayName: Create imagePullSecret
+            inputs:
+              action: createSecret
+              secretName: $(imagePullSecret)
+              dockerRegistryEndpoint: 'Container Registry Connection'
+              kubernetesServiceConnection: 'Kubernetes Cluster Connection'
+              namespace: 'default'
                 
           - task: KubernetesManifest@0
               displayName: Deploy to Kubernetes cluster
